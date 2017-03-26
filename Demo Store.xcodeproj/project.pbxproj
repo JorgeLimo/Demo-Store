@@ -12,6 +12,10 @@
 		B54BC2841E874EDF00414D82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54BC2821E874EDF00414D82 /* Main.storyboard */; };
 		B54BC2861E874EDF00414D82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B54BC2851E874EDF00414D82 /* Assets.xcassets */; };
 		B54BC2891E874EDF00414D82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54BC2871E874EDF00414D82 /* LaunchScreen.storyboard */; };
+		B54BC2911E8755F000414D82 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BC2901E8755F000414D82 /* Item.swift */; };
+		B54BC2931E87570400414D82 /* ItemCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BC2921E87570400414D82 /* ItemCellCollectionViewCell.swift */; };
+		B54BC2951E876D1300414D82 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BC2941E876D1300414D82 /* DetailViewController.swift */; };
+		B54BC2971E87771700414D82 /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BC2961E87771700414D82 /* CartTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		B54BC2851E874EDF00414D82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B54BC2881E874EDF00414D82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B54BC28A1E874EDF00414D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B54BC2901E8755F000414D82 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		B54BC2921E87570400414D82 /* ItemCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		B54BC2941E876D1300414D82 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B54BC2961E87771700414D82 /* CartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,10 @@
 				B54BC2851E874EDF00414D82 /* Assets.xcassets */,
 				B54BC2871E874EDF00414D82 /* LaunchScreen.storyboard */,
 				B54BC28A1E874EDF00414D82 /* Info.plist */,
+				B54BC2901E8755F000414D82 /* Item.swift */,
+				B54BC2921E87570400414D82 /* ItemCellCollectionViewCell.swift */,
+				B54BC2941E876D1300414D82 /* DetailViewController.swift */,
+				B54BC2961E87771700414D82 /* CartTableViewController.swift */,
 			);
 			path = "Demo Store";
 			sourceTree = "<group>";
@@ -137,6 +149,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B54BC2811E874EDF00414D82 /* ViewController.swift in Sources */,
+				B54BC2971E87771700414D82 /* CartTableViewController.swift in Sources */,
+				B54BC2911E8755F000414D82 /* Item.swift in Sources */,
+				B54BC2951E876D1300414D82 /* DetailViewController.swift in Sources */,
+				B54BC2931E87570400414D82 /* ItemCellCollectionViewCell.swift in Sources */,
 				B54BC27F1E874EDF00414D82 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

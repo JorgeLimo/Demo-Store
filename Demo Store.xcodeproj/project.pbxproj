@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B51BD9EC1EA410DB00A29F46 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51BD9EB1EA410DB00A29F46 /* Reachability.swift */; };
+		B53D658E1EA3306900E92861 /* itemsWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53D658D1EA3306900E92861 /* itemsWebService.swift */; };
 		B54BC27F1E874EDF00414D82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BC27E1E874EDF00414D82 /* AppDelegate.swift */; };
 		B54BC2811E874EDF00414D82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BC2801E874EDF00414D82 /* ViewController.swift */; };
 		B54BC2841E874EDF00414D82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54BC2821E874EDF00414D82 /* Main.storyboard */; };
@@ -16,9 +18,16 @@
 		B54BC2931E87570400414D82 /* ItemCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BC2921E87570400414D82 /* ItemCellCollectionViewCell.swift */; };
 		B54BC2951E876D1300414D82 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BC2941E876D1300414D82 /* DetailViewController.swift */; };
 		B54BC2971E87771700414D82 /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BC2961E87771700414D82 /* CartTableViewController.swift */; };
+		B57E39E41EAD20D200A450BC /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57E39E31EAD20D200A450BC /* Usuario.swift */; };
+		B5A120311EAC146200185588 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A120301EAC146200185588 /* LoginViewController.swift */; };
+		DFEA3AE57C4537F94244F893 /* Pods_Demo_Store.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B700F88CB7018F6F4A3F27 /* Pods_Demo_Store.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		55B700F88CB7018F6F4A3F27 /* Pods_Demo_Store.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo_Store.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61E19EF32D6113D872161F22 /* Pods-Demo Store.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo Store.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo Store/Pods-Demo Store.debug.xcconfig"; sourceTree = "<group>"; };
+		B51BD9EB1EA410DB00A29F46 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		B53D658D1EA3306900E92861 /* itemsWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = itemsWebService.swift; sourceTree = "<group>"; };
 		B54BC27B1E874EDF00414D82 /* Demo Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54BC27E1E874EDF00414D82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B54BC2801E874EDF00414D82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +39,10 @@
 		B54BC2921E87570400414D82 /* ItemCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		B54BC2941E876D1300414D82 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B54BC2961E87771700414D82 /* CartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTableViewController.swift; sourceTree = "<group>"; };
+		B57E39E31EAD20D200A450BC /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		B5A120301EAC146200185588 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B5E8A1EE1EA4036600587A39 /* DemoStoreHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoStoreHeader.h; sourceTree = "<group>"; };
+		C9E76A44212A0CBBF7E14FFE /* Pods-Demo Store.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo Store.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo Store/Pods-Demo Store.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +50,66 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFEA3AE57C4537F94244F893 /* Pods_Demo_Store.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		029E517BB85B0300E1A5CD37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55B700F88CB7018F6F4A3F27 /* Pods_Demo_Store.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B53D658F1EA3334B00E92861 /* Vistas */ = {
+			isa = PBXGroup;
+			children = (
+				B54BC2871E874EDF00414D82 /* LaunchScreen.storyboard */,
+				B54BC2821E874EDF00414D82 /* Main.storyboard */,
+			);
+			name = Vistas;
+			sourceTree = "<group>";
+		};
+		B53D65901EA3337E00E92861 /* Controladores */ = {
+			isa = PBXGroup;
+			children = (
+				B54BC2941E876D1300414D82 /* DetailViewController.swift */,
+				B54BC2921E87570400414D82 /* ItemCellCollectionViewCell.swift */,
+				B54BC2961E87771700414D82 /* CartTableViewController.swift */,
+				B54BC2801E874EDF00414D82 /* ViewController.swift */,
+				B5A120301EAC146200185588 /* LoginViewController.swift */,
+			);
+			name = Controladores;
+			sourceTree = "<group>";
+		};
+		B53D65911EA3339C00E92861 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				B53D658D1EA3306900E92861 /* itemsWebService.swift */,
+			);
+			name = WebService;
+			sourceTree = "<group>";
+		};
+		B53D65921EA333BB00E92861 /* Entidades */ = {
+			isa = PBXGroup;
+			children = (
+				B54BC2901E8755F000414D82 /* Item.swift */,
+				B57E39E31EAD20D200A450BC /* Usuario.swift */,
+			);
+			name = Entidades;
+			sourceTree = "<group>";
+		};
 		B54BC2721E874EDF00414D82 = {
 			isa = PBXGroup;
 			children = (
 				B54BC27D1E874EDF00414D82 /* Demo Store */,
 				B54BC27C1E874EDF00414D82 /* Products */,
+				FB41E198987D22A29D7BD2EF /* Pods */,
+				029E517BB85B0300E1A5CD37 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,18 +124,26 @@
 		B54BC27D1E874EDF00414D82 /* Demo Store */ = {
 			isa = PBXGroup;
 			children = (
+				B53D65921EA333BB00E92861 /* Entidades */,
+				B53D65911EA3339C00E92861 /* WebService */,
+				B53D65901EA3337E00E92861 /* Controladores */,
+				B53D658F1EA3334B00E92861 /* Vistas */,
 				B54BC27E1E874EDF00414D82 /* AppDelegate.swift */,
-				B54BC2801E874EDF00414D82 /* ViewController.swift */,
-				B54BC2821E874EDF00414D82 /* Main.storyboard */,
+				B51BD9EB1EA410DB00A29F46 /* Reachability.swift */,
 				B54BC2851E874EDF00414D82 /* Assets.xcassets */,
-				B54BC2871E874EDF00414D82 /* LaunchScreen.storyboard */,
 				B54BC28A1E874EDF00414D82 /* Info.plist */,
-				B54BC2901E8755F000414D82 /* Item.swift */,
-				B54BC2921E87570400414D82 /* ItemCellCollectionViewCell.swift */,
-				B54BC2941E876D1300414D82 /* DetailViewController.swift */,
-				B54BC2961E87771700414D82 /* CartTableViewController.swift */,
+				B5E8A1EE1EA4036600587A39 /* DemoStoreHeader.h */,
 			);
 			path = "Demo Store";
+			sourceTree = "<group>";
+		};
+		FB41E198987D22A29D7BD2EF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				61E19EF32D6113D872161F22 /* Pods-Demo Store.debug.xcconfig */,
+				C9E76A44212A0CBBF7E14FFE /* Pods-Demo Store.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +153,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B54BC28D1E874EDF00414D82 /* Build configuration list for PBXNativeTarget "Demo Store" */;
 			buildPhases = (
+				394CB0726D150AE15350231A /* [CP] Check Pods Manifest.lock */,
 				B54BC2771E874EDF00414D82 /* Sources */,
 				B54BC2781E874EDF00414D82 /* Frameworks */,
 				B54BC2791E874EDF00414D82 /* Resources */,
+				E5C05E42F0F5DD56284881C9 /* [CP] Embed Pods Frameworks */,
+				A8FC11D1216F356393FD9F21 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -108,6 +181,7 @@
 				TargetAttributes = {
 					B54BC27A1E874EDF00414D82 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = KEW3YF663M;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -143,16 +217,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		394CB0726D150AE15350231A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A8FC11D1216F356393FD9F21 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Demo Store/Pods-Demo Store-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5C05E42F0F5DD56284881C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Demo Store/Pods-Demo Store-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B54BC2771E874EDF00414D82 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5A120311EAC146200185588 /* LoginViewController.swift in Sources */,
 				B54BC2811E874EDF00414D82 /* ViewController.swift in Sources */,
 				B54BC2971E87771700414D82 /* CartTableViewController.swift in Sources */,
 				B54BC2911E8755F000414D82 /* Item.swift in Sources */,
 				B54BC2951E876D1300414D82 /* DetailViewController.swift in Sources */,
 				B54BC2931E87570400414D82 /* ItemCellCollectionViewCell.swift in Sources */,
+				B53D658E1EA3306900E92861 /* itemsWebService.swift in Sources */,
+				B51BD9EC1EA410DB00A29F46 /* Reachability.swift in Sources */,
+				B57E39E41EAD20D200A450BC /* Usuario.swift in Sources */,
 				B54BC27F1E874EDF00414D82 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,8 +400,10 @@
 		};
 		B54BC28E1E874EDF00414D82 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61E19EF32D6113D872161F22 /* Pods-Demo Store.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KEW3YF663M;
 				INFOPLIST_FILE = "Demo Store/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pe.ourlimm.Demo-Store";
@@ -286,8 +414,10 @@
 		};
 		B54BC28F1E874EDF00414D82 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9E76A44212A0CBBF7E14FFE /* Pods-Demo Store.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KEW3YF663M;
 				INFOPLIST_FILE = "Demo Store/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pe.ourlimm.Demo-Store";
@@ -315,6 +445,7 @@
 				B54BC28F1E874EDF00414D82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 public var cart = Array<Item>()
 public var items = Array<Item>()
@@ -47,21 +48,27 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         vwSearch.addSubview(vwCabecera)
         
-        
-        for i in 1...3 {
+        if currentReachabilityStatus ==  .notReachable {
+            let alert = UIAlertController(title: "Mensaje", message: "No tienes internet", preferredStyle : UIAlertControllerStyle.alert)
+            let action = UIAlertAction (title: "OK", style: UIAlertActionStyle.default, handler:{ (action) in
+            })
             
-            let item = Item()
-            item.nombre = "Item " + "\(i)"
-            item.precio = Double(i) * 100.0
-            item.descripcion  = "Descripcion del item \(i) y precio actual."
-            item.imagen = UIImage(named: "image_\(i)_1")
-            item.imagen2 = UIImage(named: "image_\(i)_2")
-            item.imagen3 = UIImage(named: "image_\(i)_3")
-            items.append(item)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: {
+            })
+        }else if currentReachabilityStatus == .reachableViaWiFi || currentReachabilityStatus == .reachableViaWWAN{
+            let hud = MBProgressHUD(view: self.view)
+            hud.show(animated:true)
+            hud.label.text = "Cargando"
             
+            self.view.addSubview(hud)
+            
+            itemsWebService.listarTodo() {(resultado) in
+                items = resultado
+                self.cvCollectionV.reloadData()
+                hud.hide(animated: true)
+            }
         }
-        
-        
         
     }
     

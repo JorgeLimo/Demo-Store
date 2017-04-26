@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import CoreLocation
 
 
 class itemsWebService: NSObject {
@@ -27,6 +28,7 @@ class itemsWebService: NSObject {
             for i in 0...(json.count-1) {
                 
                 let item =  Item()
+                item.idItem = Int(json[i]["iditem"].string!)
                 item.nombre = json[i]["nombre"].string
                 item.descripcion = json[i]["descripcion"].string
                 item.precio = Double(json[i]["costo"].string!)
@@ -76,14 +78,43 @@ class itemsWebService: NSObject {
             
         }
         
-    
-        
     }
     
     
-    
-    
-    
+    static func puntosDeVenta(completion: @escaping (_ result: Array<PuntosVenta>) -> Void) {
+        
+         var resultado = Array<PuntosVenta>()
+        
+        let url = URL(string: "https://www.ourlimm.com/ios/getPuntosVenta.php")
+        
+        Alamofire.request(url!, method: .get, parameters: nil, encoding: URLEncoding.httpBody , headers: nil).responseJSON { (response) in
+           
+            let json = JSON(response.result.value!)
+            
+            for i in 0...(json.count-1) {
+                
+                let lat = (Double(json[i]["latitud"].string!)! * 1000000).rounded() / 1000000
+                let lon = (Double(json[i]["longitud"].string!)! * 1000000).rounded() / 1000000
+
+
+                let location = CLLocation(latitude: lat, longitude: lon)
+
+  
+                print("\(location.coordinate)")
+                
+                let punto = PuntosVenta(title: json[i]["nombre"].string! , coordinate: location.coordinate, subtitle: json[i]["direccion"].string!)
+                
+                
+                resultado.append(punto)
+                
+            }
+            
+            completion(resultado)
+            
+        }
+
+        
+    }
     
 
 }

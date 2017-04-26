@@ -8,6 +8,7 @@
 
 import UIKit
 import MBProgressHUD
+import CoreData
 
 public var cart = Array<Item>()
 public var items = Array<Item>()
@@ -48,27 +49,42 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         vwSearch.addSubview(vwCabecera)
         
-        if currentReachabilityStatus ==  .notReachable {
-            let alert = UIAlertController(title: "Mensaje", message: "No tienes internet", preferredStyle : UIAlertControllerStyle.alert)
-            let action = UIAlertAction (title: "OK", style: UIAlertActionStyle.default, handler:{ (action) in
-            })
+        listarDeCoreData()
+
+        if items.count == 0 {
             
-            alert.addAction(action)
-            self.present(alert, animated: true, completion: {
-            })
-        }else if currentReachabilityStatus == .reachableViaWiFi || currentReachabilityStatus == .reachableViaWWAN{
-            let hud = MBProgressHUD(view: self.view)
-            hud.show(animated:true)
-            hud.label.text = "Cargando"
-            
-            self.view.addSubview(hud)
-            
-            itemsWebService.listarTodo() {(resultado) in
-                items = resultado
-                self.cvCollectionV.reloadData()
-                hud.hide(animated: true)
+            if currentReachabilityStatus ==  .notReachable {
+                let alert = UIAlertController(title: "Mensaje", message: "No tienes internet", preferredStyle : UIAlertControllerStyle.alert)
+                let action = UIAlertAction (title: "OK", style: UIAlertActionStyle.default, handler:{ (action) in
+                })
+                
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: {
+                })
+            }else if currentReachabilityStatus == .reachableViaWiFi || currentReachabilityStatus == .reachableViaWWAN{
+                let hud = MBProgressHUD(view: self.view)
+                hud.show(animated:true)
+                hud.label.text = "Cargando"
+                
+                self.view.addSubview(hud)
+                
+                itemsWebService.listarTodo() {(resultado) in
+                    
+                    //Eliminar Desactualizada
+                    self.eliminarDeCoreData()
+                    
+                    //Registrar Actualizados
+                    self.registrarEnCoreData(listado: resultado)
+                    
+                   // items = resultado
+                    self.cvCollectionV.reloadData()
+                    hud.hide(animated: true)
+                }
             }
+            
+            
         }
+        
         
     }
     
@@ -167,6 +183,101 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             controlador.itemdetalle = sender as! Item
         }
+    }
+    
+    
+    ///TODO CORE DATA
+    
+    
+    
+    func listarDeCoreData() {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "ItemsCore")
+        
+        do {
+            let resultado = try context.fetch(fetchRequest)
+            for item in resultado {
+                //convertirNSManagedObject a Publicacion
+                
+                let itemCore = Item()
+                
+                itemCore.nombre = item.value(forKey: "nombre") as! String
+                itemCore.descripcion = item.value(forKey: "descripcion") as! String
+                itemCore.precio = item.value(forKey: "precio") as! Double
+                itemCore.idItem  = item.value(forKey: "iditem") as! Int
+                //COMENTAR EN EL FUTURO
+                
+                let imgData = item.value(forKey: "imagen") as! Data
+                
+                if let image = UIImage(data: imgData) {
+                    itemCore.imagen = image
+                }
+                
+                items.append(itemCore)
+            }
+        } catch let error as NSError {
+            print(error.userInfo)
+        }
+        
+        
+    }
+    
+    
+    func registrarEnCoreData(listado: Array<Item>){
+        
+        for item in listado {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            
+            //crear un contexto en donde se registrara nuetsra entidad
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let entity = NSEntityDescription.entity(forEntityName: "ItemsCore", in: context)
+            
+            let itemCore = NSManagedObject(entity: entity!, insertInto: context)
+            
+            itemCore.setValue(item.descripcion, forKey: "descripcion")
+            itemCore.setValue(item.nombre, forKey: "nombre")
+            itemCore.setValue(item.precio, forKey: "precio")
+            itemCore.setValue(item.idItem , forKey: "iditem")
+            
+            let imgData = UIImageJPEGRepresentation(item.imagen!, 1)!
+            
+            itemCore.setValue(imgData, forKey: "imagen")
+            
+            do {
+                try context.save()
+                items.append(item)
+                print(item.nombre + "se registro correctamente")
+            } catch let error as NSError {
+                print(item.nombre + "No se registro correctamente: \(error.userInfo)")
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    func eliminarDeCoreData (){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "ItemsCore")
+        
+        do {
+            let result = try context.fetch(fetchRequest)
+            
+            for item in result {
+                context.delete(item)
+            }
+            
+            try context.save()
+            
+        } catch let error as NSError {
+            print(error.description)
+        }
+        
     }
     
 

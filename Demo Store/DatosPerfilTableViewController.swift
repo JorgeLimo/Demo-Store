@@ -1,46 +1,26 @@
 //
-//  CartTableViewController.swift
+//  DatosPerfilTableViewController.swift
 //  Demo Store
 //
-//  Created by Jorge Luis Limo Arispe on 25/03/17.
+//  Created by Jorge Luis Limo Arispe on 24/04/17.
 //  Copyright © 2017 Jorge Luis Limo. All rights reserved.
 //
 
 import UIKit
-import MapKit
-import CoreLocation
+import CoreData
 
-class CartTableViewController: UITableViewController, CLLocationManagerDelegate {
-    
-    
-    @IBOutlet var tableCart: UITableView!
-    
-    var locationNow = CLLocationCoordinate2D()
-
-    let manager = CLLocationManager()
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        let location = locations[0]
-
-        let myLocationBitch:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude,location.coordinate.longitude)
-        locationNow = myLocationBitch
-        
-    }
-    
+class DatosPerfilTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
- 
-        manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
-        
-    }
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    
+        }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -49,62 +29,52 @@ class CartTableViewController: UITableViewController, CLLocationManagerDelegate 
 
     // MARK: - Table view data source
 
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return cart.count
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "celdaCart", for: indexPath) as! ItemCarritoTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "celdaPerfil", for: indexPath)
 
-        let item = cart[indexPath.row]
-        cell.imgItem.image = item.imagen
-        cell.nomItem.text = item.nombre
-        cell.tag = indexPath.row
         
-        // Configure the cell...
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "UsuarioCore")
         
-        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeFunc))
-        swipe.direction = UISwipeGestureRecognizerDirection.left
-        cell.addGestureRecognizer(swipe)
+        do {
+            let resultado = try context.fetch(fetchRequest)
+            for item in resultado {
+                //convertirNSManagedObject a Publicacion
+                
+                if (indexPath.row == 0) {
+                    cell.textLabel?.text = "Nombre"
+                    cell.detailTextLabel?.text = item.value(forKey: "nombreCompleto") as? String
+    
+                }else{
+                    cell.textLabel?.text = "Usuario"
+                    cell.detailTextLabel?.text = item.value(forKey: "usuario") as? String
+                    
+                }
+                
+            }
+            
+        } catch let error as NSError {
+            print(error.userInfo)
+        }
         
+        
+
         return cell
     }
-    
  
-    @IBAction func realizarCompra(_ sender: UIButton) {
-        
-        
-        
-        print(locationNow)
-        
-        
-    }
-    
-    
-    // GET LOCATION
 
-    
-    // END GET LOCATION
-    
-    
-    
-
-    func swipeFunc(sender : UISwipeGestureRecognizer){
-        let cell = sender.view
-        let indexPath = cell?.tag
-        cart.remove(at: indexPath!)
-        tableCart.reloadData()
-        
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        tableCart.reloadData()
-
-    }
-    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

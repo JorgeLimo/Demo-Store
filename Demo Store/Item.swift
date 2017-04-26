@@ -10,6 +10,7 @@ import UIKit
 
 public class Item: NSObject {
     
+    var idItem:Int!
     var nombre:String!
     var descripcion: String!
     var imagen:UIImage!

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B51BD9EC1EA410DB00A29F46 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51BD9EB1EA410DB00A29F46 /* Reachability.swift */; };
+		B51CEBBB1EAD5EDA00D53CEA /* LocalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CEBBA1EAD5EDA00D53CEA /* LocalesViewController.swift */; };
+		B51CEBBD1EAD601100D53CEA /* PuntosVenta.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51CEBBC1EAD601100D53CEA /* PuntosVenta.swift */; };
 		B53D658E1EA3306900E92861 /* itemsWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53D658D1EA3306900E92861 /* itemsWebService.swift */; };
 		B54BC27F1E874EDF00414D82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BC27E1E874EDF00414D82 /* AppDelegate.swift */; };
 		B54BC2811E874EDF00414D82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BC2801E874EDF00414D82 /* ViewController.swift */; };
@@ -18,8 +20,12 @@
 		B54BC2931E87570400414D82 /* ItemCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BC2921E87570400414D82 /* ItemCellCollectionViewCell.swift */; };
 		B54BC2951E876D1300414D82 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BC2941E876D1300414D82 /* DetailViewController.swift */; };
 		B54BC2971E87771700414D82 /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54BC2961E87771700414D82 /* CartTableViewController.swift */; };
+		B57335431EB0421F0076C1C8 /* ItemCarritoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57335421EB0421F0076C1C8 /* ItemCarritoTableViewCell.swift */; };
 		B57E39E41EAD20D200A450BC /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57E39E31EAD20D200A450BC /* Usuario.swift */; };
 		B5A120311EAC146200185588 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A120301EAC146200185588 /* LoginViewController.swift */; };
+		B5BA47881EAE4D81009EB7B2 /* Demo_Store.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5BA47861EAE4D81009EB7B2 /* Demo_Store.xcdatamodeld */; };
+		B5BA47901EAE9E12009EB7B2 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BA478F1EAE9E12009EB7B2 /* PerfilViewController.swift */; };
+		B5BA47921EAEA4B7009EB7B2 /* DatosPerfilTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BA47911EAEA4B7009EB7B2 /* DatosPerfilTableViewController.swift */; };
 		DFEA3AE57C4537F94244F893 /* Pods_Demo_Store.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B700F88CB7018F6F4A3F27 /* Pods_Demo_Store.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +33,8 @@
 		55B700F88CB7018F6F4A3F27 /* Pods_Demo_Store.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo_Store.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61E19EF32D6113D872161F22 /* Pods-Demo Store.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo Store.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo Store/Pods-Demo Store.debug.xcconfig"; sourceTree = "<group>"; };
 		B51BD9EB1EA410DB00A29F46 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		B51CEBBA1EAD5EDA00D53CEA /* LocalesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalesViewController.swift; sourceTree = "<group>"; };
+		B51CEBBC1EAD601100D53CEA /* PuntosVenta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntosVenta.swift; sourceTree = "<group>"; };
 		B53D658D1EA3306900E92861 /* itemsWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = itemsWebService.swift; sourceTree = "<group>"; };
 		B54BC27B1E874EDF00414D82 /* Demo Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54BC27E1E874EDF00414D82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,8 +47,12 @@
 		B54BC2921E87570400414D82 /* ItemCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		B54BC2941E876D1300414D82 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B54BC2961E87771700414D82 /* CartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTableViewController.swift; sourceTree = "<group>"; };
+		B57335421EB0421F0076C1C8 /* ItemCarritoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCarritoTableViewCell.swift; sourceTree = "<group>"; };
 		B57E39E31EAD20D200A450BC /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		B5A120301EAC146200185588 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B5BA47871EAE4D81009EB7B2 /* Demo_Store.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Demo_Store.xcdatamodel; sourceTree = "<group>"; };
+		B5BA478F1EAE9E12009EB7B2 /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
+		B5BA47911EAEA4B7009EB7B2 /* DatosPerfilTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatosPerfilTableViewController.swift; sourceTree = "<group>"; };
 		B5E8A1EE1EA4036600587A39 /* DemoStoreHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoStoreHeader.h; sourceTree = "<group>"; };
 		C9E76A44212A0CBBF7E14FFE /* Pods-Demo Store.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo Store.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo Store/Pods-Demo Store.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +94,10 @@
 				B54BC2961E87771700414D82 /* CartTableViewController.swift */,
 				B54BC2801E874EDF00414D82 /* ViewController.swift */,
 				B5A120301EAC146200185588 /* LoginViewController.swift */,
+				B51CEBBA1EAD5EDA00D53CEA /* LocalesViewController.swift */,
+				B5BA478F1EAE9E12009EB7B2 /* PerfilViewController.swift */,
+				B5BA47911EAEA4B7009EB7B2 /* DatosPerfilTableViewController.swift */,
+				B57335421EB0421F0076C1C8 /* ItemCarritoTableViewCell.swift */,
 			);
 			name = Controladores;
 			sourceTree = "<group>";
@@ -99,6 +115,7 @@
 			children = (
 				B54BC2901E8755F000414D82 /* Item.swift */,
 				B57E39E31EAD20D200A450BC /* Usuario.swift */,
+				B51CEBBC1EAD601100D53CEA /* PuntosVenta.swift */,
 			);
 			name = Entidades;
 			sourceTree = "<group>";
@@ -132,6 +149,7 @@
 				B51BD9EB1EA410DB00A29F46 /* Reachability.swift */,
 				B54BC2851E874EDF00414D82 /* Assets.xcassets */,
 				B54BC28A1E874EDF00414D82 /* Info.plist */,
+				B5BA47861EAE4D81009EB7B2 /* Demo_Store.xcdatamodeld */,
 				B5E8A1EE1EA4036600587A39 /* DemoStoreHeader.h */,
 			);
 			path = "Demo Store";
@@ -271,15 +289,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5A120311EAC146200185588 /* LoginViewController.swift in Sources */,
+				B5BA47921EAEA4B7009EB7B2 /* DatosPerfilTableViewController.swift in Sources */,
 				B54BC2811E874EDF00414D82 /* ViewController.swift in Sources */,
 				B54BC2971E87771700414D82 /* CartTableViewController.swift in Sources */,
+				B51CEBBD1EAD601100D53CEA /* PuntosVenta.swift in Sources */,
 				B54BC2911E8755F000414D82 /* Item.swift in Sources */,
 				B54BC2951E876D1300414D82 /* DetailViewController.swift in Sources */,
 				B54BC2931E87570400414D82 /* ItemCellCollectionViewCell.swift in Sources */,
+				B5BA47881EAE4D81009EB7B2 /* Demo_Store.xcdatamodeld in Sources */,
 				B53D658E1EA3306900E92861 /* itemsWebService.swift in Sources */,
 				B51BD9EC1EA410DB00A29F46 /* Reachability.swift in Sources */,
 				B57E39E41EAD20D200A450BC /* Usuario.swift in Sources */,
+				B51CEBBB1EAD5EDA00D53CEA /* LocalesViewController.swift in Sources */,
+				B5BA47901EAE9E12009EB7B2 /* PerfilViewController.swift in Sources */,
 				B54BC27F1E874EDF00414D82 /* AppDelegate.swift in Sources */,
+				B57335431EB0421F0076C1C8 /* ItemCarritoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +472,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B5BA47861EAE4D81009EB7B2 /* Demo_Store.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B5BA47871EAE4D81009EB7B2 /* Demo_Store.xcdatamodel */,
+			);
+			currentVersion = B5BA47871EAE4D81009EB7B2 /* Demo_Store.xcdatamodel */;
+			name = Demo_Store.xcdatamodeld;
+			path = ../Demo_Store.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B54BC2731E874EDF00414D82 /* Project object */;
 }

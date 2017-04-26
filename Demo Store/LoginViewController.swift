@@ -7,8 +7,10 @@
 //
 
 import UIKit
-import SwiftyJSON
+import CoreData
+import MBProgressHUD
 
+public var objeto = Usuario()
 
 class LoginViewController: UIViewController {
 
@@ -21,13 +23,23 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        obtenerUsuarioDeCoreData()
+        
+        
+        if objeto.usuario != nil {
+            print("ya inicio sesion")
+            //self.performSegue(withIdentifier: "acceso", sender: (Any).self)
+            
+        }
+       
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+       
     }
     
     
@@ -37,11 +49,16 @@ class LoginViewController: UIViewController {
         let passIngresado = lblcontrasenia.text
         
         if (usuarioIngresado != "" && passIngresado != "") {
-        
-            print(usuarioIngresado!)
-            print(passIngresado!)
+            
+            let hud = MBProgressHUD(view: self.view)
+            hud.show(animated:true)
+            hud.label.text = "Iniciando Sesión"
+            self.view.addSubview(hud)
+
             
             itemsWebService.loginUsuarios(usuario: usuarioIngresado!, pass: passIngresado!, completion: { (resultado) in
+        
+                hud.hide(animated: true)
                 
                 if  (resultado.usuario == nil ) {
                     
@@ -54,8 +71,8 @@ class LoginViewController: UIViewController {
                     })
                 
                 }else{
-                   /*let nombre = resultado.nomCompleto
-                    print(nombre!)*/
+                   /*let nombre = resultado.nomCompleto*/
+                    self.registrarEnCoreData(listado: resultado)
                     self.performSegue(withIdentifier: "acceso", sender: sender)
                 }
             
@@ -86,15 +103,71 @@ class LoginViewController: UIViewController {
         
     }
     
+    
+    //COREDATA
+    
+     func obtenerUsuarioDeCoreData() {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "UsuarioCore")
+        
+        do {
+            let resultado = try context.fetch(fetchRequest)
+            for item in resultado {
+                //convertirNSManagedObject a Publicacion
+                
+                objeto.usuario = item.value(forKey: "usuario") as! String
+                objeto.nomCompleto = item.value(forKey: "nombreCompleto") as! String
+                objeto.contraseña = item.value(forKey: "password") as! String
+                objeto.idUsuario = item.value(forKey: "idusuario") as! Int
+    
+            }
+        } catch let error as NSError {
+            print(error.userInfo)
+        }
+        
+        
+    }
+    
+    
+    
+    func registrarEnCoreData(listado: Usuario){
+        
+       
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            
+            //crear un contexto en donde se registrara nuetsra entidad
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let entity = NSEntityDescription.entity(forEntityName: "UsuarioCore", in: context)
+            
+            let userCore = NSManagedObject(entity: entity!, insertInto: context)
+        
+            userCore.setValue(listado.idUsuario , forKey: "idusuario")
+            userCore.setValue(listado.nomCompleto , forKey: "nombreCompleto")
+            userCore.setValue(listado.usuario, forKey: "usuario")
+            userCore.setValue(listado.contraseña, forKey: "password")
+        
+
+            do {
+                try context.save()
+                objeto = listado
+                print(listado.nomCompleto + "Se guardo correctamente su sesión")
+            } catch let error as NSError {
+                print(listado.nomCompleto + "No se registro correctamente: \(error.userInfo)")
+            }
+        
+    }
+    
+   
+    
 
     /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
+    ovecio
     */
 
 }

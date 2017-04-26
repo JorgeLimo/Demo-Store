@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Usuario: NSObject {
+public class Usuario: NSObject {
 
     var idUsuario: Int!
     var usuario:String!

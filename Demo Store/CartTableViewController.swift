@@ -75,6 +75,9 @@ class CartTableViewController: UITableViewController, CLLocationManagerDelegate 
  
     @IBAction func realizarCompra(_ sender: UIButton) {
         
+        //obtener coredata ID USUARIO, NOMBRE 
+        //OBNTER LOS ID (CREO QUE SERIA UN FOR DEL ARREGLO PUBLIC DEL CARRITO)
+        //iimpimir los datos
         
         
         print(locationNow)

@@ -93,14 +93,10 @@ class itemsWebService: NSObject {
             
             for i in 0...(json.count-1) {
                 
-                let lat = (Double(json[i]["latitud"].string!)! * 1000000).rounded() / 1000000
-                let lon = (Double(json[i]["longitud"].string!)! * 1000000).rounded() / 1000000
+                let lat = (Double(json[i]["latitud"].string!))
+                let lon = (Double(json[i]["longitud"].string!))
 
-
-                let location = CLLocation(latitude: lat, longitude: lon)
-
-  
-                print("\(location.coordinate)")
+                let location = CLLocation(latitude: lat!, longitude: lon!)
                 
                 let punto = PuntosVenta(title: json[i]["nombre"].string! , coordinate: location.coordinate, subtitle: json[i]["direccion"].string!)
                 

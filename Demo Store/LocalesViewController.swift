@@ -51,7 +51,7 @@ class LocalesViewController: UIViewController, MKMapViewDelegate, CLLocationMana
     }
     
     func centrar(ubicacion: CLLocation){
-        let region = MKCoordinateRegion(center: ubicacion.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003))
+        let region = MKCoordinateRegion(center: ubicacion.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         
         mapView.setRegion(region, animated: true)
         
